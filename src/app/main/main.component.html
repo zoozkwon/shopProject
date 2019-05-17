@@ -1,0 +1,132 @@
+<app-navbar></app-navbar>
+<body>
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center teal-text text-lighten-2"><i class="material-icons">안녕하신가!</i></h1>
+      <div class="row center">
+        <h5 class="header col s12 light">힘세고 강한 아침, 만일 내게 물어보면 나는 왈도</h5>
+      </div>
+      <div class="row center">
+        <div class="col s4"></div>
+        <ul id="tabs-swipe" class="tabs">
+          <li  class="tab col s2 "><a class="active">1인샵</a></li>
+          <li  class="tab col s2 "><a >로드샵</a></li>
+        </ul>
+        <div class="row" style="margin-top: 10px;">
+          <div class="input-field col s4">
+            <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+            <label for="first_name">First Name</label>
+          </div>
+
+          <div class="input-field col s4">
+            <select class="browser-default">
+              <option value="" disabled selected>작업 선택</option>
+              <option value="Approval" >승인</option>
+              <option value="ApprovalCancel" >승인 취소</option>
+              <option value="Defer" >보류</option>
+              <option value="Delete" >삭제</option>
+            </select>
+          </div>
+          <a class="waves-effect waves-light btn right col s4" style="margin-top:14px; height:43px;">검색</a>
+        </div>
+        <br><br>
+
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+  <div class="parallax"><img src="../../assets/images/background1.jpg" alt="Unsplashed background img 1"></div>
+</div>
+
+
+<div class="container">
+  <div class="section">
+
+    <!--   Icon Section   -->
+    <div class="row">
+      <div class="col s12">
+        <div class="icon-block">
+          <h4 class="center"><i class="material-icons">지금은 샵 무료 등록 기간 입니다</i></h4>
+          <br><br>
+          <h5 class="center red-text">New</h5>
+          <h4 class="center">1인샵 신규 제휴점</h4>
+
+          <div class="item col l4 m6 s12" style="padding:20px;">
+
+            <div class="card"  *ngFor="let soloshop of soloshops" >
+              <a href="/main/ShopPage?listing_type=soloshop&listing={{soloshop.shop_name}}&n={{soloshop.no}}">
+                <div class="card-image" >
+                  <img src="../../assets/images/test.png">
+                  <span class="card-title" style="padding : 20px 20px 20px 20px;">
+                      <p style="margin:0; font-size: 0.9em;">{{soloshop.shop_name}}</p>
+                      <p style="margin:0; font-size: 0.6em; text-align:left;">{{soloshop.mobile}}</p>
+                      <p style="margin:0; font-size: 0.6em;">대한민국 {{soloshop.si}} {{soloshop.gu}}</p>
+                    </span>
+                </div>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <div class="icon-block">
+          <h5 class="center red-text">New</h5>
+          <h4 class="center">로드샵 신규 제휴점</h4>
+
+          <div class="item col l4 m6 s12" style="padding:20px;">
+
+            <div class="card"  *ngFor="let soloshop of soloshops" >
+              <a href="/main/ShopPage?listing_type=soloshop&listing={{soloshop.shop_name}}&n={{soloshop.no}}">
+                <div class="card-image" >
+                  <img src="../../assets/images/test.png">
+                  <span class="card-title" style="padding : 20px 20px 20px 20px">
+                      <p>{{soloshop.no}}</p>
+                      <p style="margin:0; font-size: 0.9em;">{{soloshop.shop_name}}</p>
+                      <p style="margin:0; font-size: 0.6em;">{{soloshop.mobile}}</p>
+                      <p style="margin:0; font-size: 0.6em;">대한민국 {{soloshop.si}} {{soloshop.gu}}</p>
+                    </span>
+                </div>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="margin-top:50px;">
+      <div class="col s12">
+        <div class="icon-block">
+          <img src="../../assets/images/test.png" style="height:100%; width:100%; max-width:4000px;">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container" style="margin-top:50px;">
+      <br><br>
+      <div class="row center" style="font-size:2.3em;" >
+        <span class="header center teal-text text-lighten-2">제휴샵</span>
+        <span>의 소중한<br>파트너가 되어주세요.</span>
+      </div>
+      <div class="row center">
+        <a id="download-button"
+           class="btn-large waves-effect waves-light teal lighten-1"
+           style="border-radius: 50px;"
+           href="/main/ShopAddPage" >Get Started</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+<app-footer></app-footer>
+</body>

@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>로그인</h2>
+<mat-dialog-content>
+    <div class="row" style="margin-bottom: 50px;">
+      <form class="col s12" (change)="check()">
+        <div class="row">
+          <div class="input-field col s12">
+            <input placeholder="아이디 입력(필수)" id="disabled" type="text" class="validate" #id>
+            <label class="active" for="disabled">아이디</label>
+          </div>
+            <div class="input-field col s12">
+              <input placeholder="비밀번호 입력(필수)" id="password" type="password" class="validate" #pass>
+              <label class="active" for="password">비밀번호</label>
+            </div>
+          <a class="waves-effect waves-light btn col s12"  style="text-align: center;" (click)="Login( )" >로그인</a>
+        </div>
+        <div style="text-align: center;" >
+          여기여가 처음이신가요?  <a class="red-text text-lighten-3" (click)="openSign()">회원가입</a>
+        </div>
+      </form>
+    </div>
+</mat-dialog-content>

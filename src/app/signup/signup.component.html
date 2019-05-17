@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>회원가입</h2>
+<mat-dialog-content>
+  <div class="row">
+    <form class="col s12" >
+        <div class="input-field col s6">
+          <input placeholder="아이디 입력(필수)" id="user_id" type="text" class="validate" #id>
+          <label class="active" for="user_id">아이디</label>
+        </div>
+      <div class="input-field col s6">
+        <input placeholder="이름 입력(필수)" id='name' type="text" class="validate" #name>
+        <label class="active" for="name">이름</label>
+      </div>
+        <div class="input-field col s12">
+          <input placeholder="비밀번호 입력(필수)" id="password" type="password" class="validate" #pass>
+          <label class="active" for="password">비밀번호</label>
+        </div>
+        <div class="input-field col s12">
+          <input placeholder="이메일 입력(선택)" id='email' type="email" class="validate" #email>
+          <label class="active" for="email">이메일</label>
+        </div>
+        <div class="row">
+          <a class="waves-effect waves-light btn col s12"  style="text-align: center;" (click)="SignUp()" >회원가입</a>
+        </div>
+    </form>
+  </div>
+</mat-dialog-content>

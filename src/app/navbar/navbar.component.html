@@ -1,0 +1,23 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<head>
+  <title>Parallax Template - Materialize</title>
+</head>
+<nav class="white" role="navigation">
+    <div  class="container">
+    <a id="logo-container" href="/main/Home" class="brand-logo" style="">제휴샵</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="/main/Home">제휴샵</a></li>
+      <li [hidden]="login" ><a (click)="openLogin()">로그인</a></li>
+      <li [hidden]="login" ><a (click)="openSign()">회원가입</a></li>
+      <li [hidden]="!login"><a (click)="LogOut()">로그아웃</a></li>
+      <li ><a href="/main/ShopAddPage">제휴샵 등록신청</a></li>
+    </ul>
+    </div>
+    <ul id="nav-mobile" class="sidenav">li
+        <li [hidden]="login" ><a (click)="openLogin()">로그인</a></li>
+        <li [hidden]="login" ><a (click)="openSign()">회원가입</a></li>
+        <li [hidden]="!login"><a (click)="LogOut()">로그아웃</a></li>
+        <li ><a href="/main/ShopAddPage">제휴샵 등록신청</a></li>
+    </ul>
+    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+</nav>

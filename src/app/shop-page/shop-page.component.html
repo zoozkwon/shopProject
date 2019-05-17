@@ -1,0 +1,167 @@
+<app-navbar></app-navbar>
+<body>
+<div id="index-banner" class="parallax-container" >
+      <div class="row container" *ngFor="let item of soloshop" >
+        <div class="container" style="position: absolute;bottom: 20px;text-align: right;z-index: 10;">
+          <div class="col s12">
+            <div class="item" >
+              <div class="col l1 m12 s12" style="padding-right:20px;">
+                <h3>썸</h3>
+              </div>
+              <div class="col l4 m12 s12">
+                <h5>
+                  {{item.shop_name}}
+                </h5>
+                <p>
+                  {{item.sub_title}}
+                </p>
+              </div>
+            <div class="col l7 m12 s12">
+              <div class="col s12">
+              <h5 style="margin-left:10px;">
+              대한민국 {{item.si}} {{item.gu}} {{item.adress}}
+              </h5>
+              <h5 style="margin-left:10px;"> {{item.mobile}} </h5>
+              </div>
+              <div class="col s12">
+              <a class="waves-light btn" id="top_button" style="margin-left:10px;" (click)="good()">좋아요</a>
+              <a class="waves-light btn" id="top_button" style="margin-left:10px;">공유하기</a>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <div class="parallax" ><img src="../../assets/images/background1.jpg" alt="background img 1"></div>
+</div>
+<div class="body" style="padding-top:0;">
+  <div class="row items"  id="top_line">
+    <div class="row container" style="margin-bottom: 0" >
+      <div class="col s12" style="max-height:105px;">
+        <div class="col s12">
+          <ul id="tabs-swipe-demo" class="tabs" >
+            <li  class="tab col s4 "><a href="#shop" class="active">샵정보</a></li>
+            <li  class="tab col s4 "><a href="#event" >EVENT</a></li>
+            <li  class="tab col s4 "><a href="#review" >리뷰</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="shop" class="row container">
+    <div class="col l7 m12 s12">
+      <div class="item">
+        <div class="col l12 m12 s12" id="items"   *ngFor="let item of soloshop">
+          <p>상세 설명</p>
+          <p style="text-align:center;">
+            이사벨 타투<br>
+            안녕하세요 홍대 타투 유명한곳 이사벨 타투입니다<br>
+            이제 대중적인 타투 저렴한 가격으로 새겨보세요<br>
+            내몸의 각인으로 신중한 선택 하시길 바랍니다<br>
+            이사벨 타투에서는 정품잉크를 사용 합니다 합리적인<br>
+            가격으로 운영 하고 있습니다<br>
+            {{item.content}}
+          </p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="col l12 m12 s12" id="items" *ngFor="let item of soloshop">
+          <p>가격표</p>
+          {{item.price}}
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="col l12 m12 s12" id="items">
+          <p>options</p>
+          <div class="row" *ngFor="let item of soloshop">
+            <img src="http://cfile25.uf.tistory.com/image/2711C13D5805FE99214C15" class="col s4" style="padding:5px;">
+            <img src="http://cfile25.uf.tistory.com/image/2711C13D5805FE99214C15" class="col s4" style="padding:5px;">
+            <img src="http://cfile25.uf.tistory.com/image/2711C13D5805FE99214C15" class="col s4" style="padding:5px;">
+            <img src="http://cfile25.uf.tistory.com/image/2711C13D5805FE99214C15" class="col s4" style="padding:5px;">
+            <img src="http://cfile25.uf.tistory.com/image/2711C13D5805FE99214C15" class="col s4" style="padding:5px;">
+            <img src="http://cfile25.uf.tistory.com/image/2711C13D5805FE99214C15" class="col s4" style="padding:5px;">
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="col l12 m12 s12" id="items">
+          <p>갤러리</p>
+          <div class="owl-carousel">
+            <div class="item" *ngFor="let item of images1;">
+              <img src={{item}} />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="col l12 m12 s12" id="items" *ngFor="let item of soloshop">
+          <p>위치 안내</p>
+          <agm-map [latitude]="lat" [longitude]="lng">
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+          </agm-map>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col l5 m12 s12">
+      <div class="item">
+        <div class="col l12 m12 s12" id="items" *ngFor="let item of soloshop">
+          <p>Open</p>
+          <p>
+            매주 월 - 금 오전 9시 ~ 오후 5시<br>토 - 일, 공휴일 휴무
+            {{item.op_time}}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col l5 m12 s12">
+      <div class="item">
+        <div class="col l12 m12 s12" id="items" *ngFor="let item of soloshop">
+          <div *ngIf="item.kakao_talk">
+            <p>카카오 오픈 채팅</p>
+            <a href="{{item.kakao_talk}}" class="black-text">
+              <p>{{item.kakao_talk}}</p>
+            </a>
+          </div>
+          <div *ngIf="!item.kakao_talk">
+            <p>카카오 오픈 채팅</p>
+            <p>오픈중인 채팅이 없습니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col l5 m12 s12">
+      <div class="item">
+        <div class="col l12 m12 s12" id="items" *ngFor="let item of soloshop">
+          <div *ngIf="item.blog">
+            <p>블로그</p>
+            <a href="{{item.blog}}" class="black-text">
+              <p>{{item.blog}}</p>
+            </a>
+          </div>
+          <div *ngIf="!item.blog">
+            <p>블로그</p>
+            <p>개설중인 블로그가 없습니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="event">
+  <app-shop-event ></app-shop-event>
+</div>
+<div id="review">
+  <app-shop-review></app-shop-review>
+</div>
+<app-footer></app-footer>
+</body>
+

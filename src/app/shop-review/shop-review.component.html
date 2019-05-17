@@ -1,0 +1,87 @@
+<div class="row container">
+  <div class="col s12">
+  <div class="col l7 m12 s12" style="height:100%">
+    <div class="item">
+      <div class="col l12 m12 s12" id="items"  >
+        <div class="header">
+          <div class="col s12">
+          <span style="font-size:0.7em">test</span>
+          </div>
+          <div class="col s12">
+          <span style="font-size:0.7em">2018년 7월 16일 2:15 오후</span>
+          </div>
+        </div>
+        <div class="content">
+          <div class="col s12">
+            <p>
+              아주 좋구요.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col l5 m12 s12">
+    <div class="item">
+      <div class="col l12 m12 s12" id="items">
+        <div class="header">
+          <div class="col s12">
+            <span style="font-size:0.7em">리뷰 추가</span>
+          </div>
+        </div>
+        <div class="content">
+          <div class="col s12">
+            <span class="star-input">
+            	<span class="input">
+                	<input type="radio" name="star-input" value="1" id="p1" (click)="star($event)">
+                	<label for="p1"></label>
+                	<input type="radio" name="star-input" value="2" id="p2" (click)="star($event)">
+                	<label for="p2"></label>
+                	<input type="radio" name="star-input" value="3" id="p3" (click)="star($event)">
+                	<label for="p3"></label>
+                	<input type="radio" name="star-input" value="4" id="p4" (click)="star($event)">
+                	<label for="p4"></label>
+                	<input type="radio" name="star-input" value="5" id="p5" (click)="star($event)">
+                	<label for="p5"></label>
+              	</span>
+              	<output><b>{{GPA}}</b>점</output>
+            </span>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input placeholder="당신의 이름"
+                     id="name"
+                     type="text"
+                     class="validate" #name>
+              <label for="name" class="black-text">이름</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input placeholder="당신의 이메일"
+                     id="email"
+                     type="text"
+                     class="validate" #email>
+              <label for="email" class="black-text">이메일</label>
+            </div>
+            <p style="font-size:0.8em;">*솔직하고 정직한 리뷰는 다른 분들에게 소중한 정보가 될 수 있습니다* <br>
+              *근거없는 무차별적 비방, 악성 리뷰는 경고없이 삭제될 수 있습니다*</p>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+                <textarea rows="4"
+                          placeholder="샵에 관련된 상세 설명"
+                          id="review"
+                          class="materialize-textarea" #review></textarea>
+              <label for="review">리뷰 내용</label>
+            </div>
+          </div>
+          <a class="waves-light btn" (click)="writeReview()">리뷰 작성</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>

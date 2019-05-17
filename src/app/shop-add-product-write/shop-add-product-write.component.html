@@ -1,0 +1,286 @@
+
+<app-navbar></app-navbar>
+<body class="body">
+<div class="container" >
+  <div class="section items" id="products">
+    <div id="sub_title_text">
+      <h6>샵 정보</h6>
+    </div>    <br><br>
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <select onmousedown="if(this.options.length>4){this.size=4;}"
+                    onchange="this.blur()"
+                    onblur="this.size=0;"
+                    class="browser-default"
+                    id="shopcategory"
+                    (change)="selectChangeHandler($event)"
+                    #shopcategory>
+              <option value="" disabled selected>샵 분류 선택</option>
+              <option value="{{item.name}}" *ngFor="let item of items">{{item.name}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input placeholder="프레디 피자가게"
+                   id="shop_name"
+                   type="text"
+                   class="validate" #shop_name>
+            <label for="shop_name" class="black-text">샵 이름</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input placeholder="맛있고 영양가 높은 음식을 제공하겠습니다."
+                   id="sub_title"
+                   type="text"
+                   class="validate" #sub_title>
+            <label for="sub_title" class="black-text">부제목</label>
+          </div>
+          <p>주요 특징에 대해 간단하게 설명을 해주세요.</p>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <select class="browser-default" id="options" #shop_options>
+              <option value="" disabled selected>옵션 선택</option>
+              <option value="배달가능">배달 가능</option>
+              <option value="방문할인">샵 방문시 할인</option>
+              <option value="예약">예약</option>
+              <option value="주차">주차</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea placeholder="샵에 관련된 상세 설명"
+                          id="shop_content"
+                          class="materialize-textarea" #shop_content></textarea>
+                <label for="shop_content">상세 설명</label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container" >
+  <div class="section items" id="products">
+    <div id="sub_title_text">
+      <h6>이미지 업로드</h6>
+    </div>
+    <br><br>
+    <div style="padding-top:40px;"></div>
+
+    <form action="#" id="upload_image">
+      <div id="sub_title_text">
+        <label>
+          로고 (선택사항)
+        </label>
+      </div>
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>File</span>
+          <input id="logo" type="file" (change)="selectLogoFile($event)">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="로고 이미지를 업로드 해주세요">
+        </div>
+      </div>
+    </form>
+
+
+    <form action="#" id="upload_image">
+      <div id="sub_title_text">
+        <label >
+          커버 이미지 (선택사항)
+        </label>
+      </div>
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>File</span>
+          <input id='cover' type="file" (change)="selectCoverFile($event)">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="상세페이지에 사용될 대표 이미지를 업로드 합니다">
+        </div>
+      </div>
+    </form>
+
+    <form action="#" id="upload_image">
+      <div id="sub_title_text">
+        <label >
+          갤러리 등록 (선택사항)
+        </label>
+      </div>
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>File</span>
+          <input id='gallery' type="file" (change)="selectGallFile($event)">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="대표 이미지 외에 슬라이드 할 이미지를 업로드 합니다.">
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<div class="container" >
+  <div class="section items" id="products">
+    <div id="sub_title_text">
+      <h6>연락처 정보</h6>
+    </div>
+    <br><br>
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12" style="margin-bottom: 0;">
+            <input placeholder="010 2644 6135"
+                   id="shop_hp"
+                   type="text"
+                   class="validate" #Tel>
+            <label for="shop_hp" class="black-text">연락처 (선택사항)</label>
+          </div>
+          <p>휴대전화 또는 샵 연락처를 입력하세요.</p>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12" style="margin-bottom: 0;">
+            <input placeholder="https://open.kakao.com/o/...."
+                   id="open_kakao"
+                   type="text"
+                   class="validate" #kakao_talk>
+            <label for="open_kakao" class="black-text">카카오 오픈채팅</label>
+          </div>
+          <p>카카오 오픈채팅 URL을 입력합니다.</p>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12" style="margin-bottom: 0;">
+            <input placeholder="https://blog.naver.com/...."
+                   id="blog"
+                   type="text"
+                   class="validate" #blog>
+            <label for="blog" class="black-text">블로그 (선택사항)</label>
+          </div>
+          <p>블로그가 있는 경우 주소를 입력 해주세요.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container" >
+  <div class="section items" id="products">
+    <div id="sub_title_text">
+      <h6>가격표 / 운영시간</h6>
+    </div>
+    <div class="row">
+      <form class="col s12">
+
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea placeholder="상품 가격표"
+                          id="price"
+                          class="materialize-textarea" #price></textarea>
+                <label for="price">가격표 작성 (선택사항)</label>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea placeholder="월 - 금 : 오전 9시 ~ 오후 6시 &#13;토 - 일 : 휴무"
+                          id="price"
+                          class="materialize-textarea" style="height: 60px;" #op_time></textarea>
+                <label for="price">운영시간 (선택사항)</label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container" >
+  <div class="section items" id="products">
+    <br>
+    <div id="sub_title_text">
+      <h6>위치 설정</h6>
+    </div>
+    <div class="row">
+      <form class="col s12">
+        <div class="center">
+          <h1>지도 준비중입니다.</h1>
+        </div>
+
+        <div class="row">
+          <div id="sub_title_text">
+            <label>지역</label>
+          </div>
+          <br>
+          <div class="input-field col s6">
+            <select onmousedown="if(this.options.length>4){this.size=4;}"
+                    onchange="this.blur()"
+                    onblur="this.size=0;"
+                    class="browser-default"
+                    id="citys"
+                    (change)="selectSi()" #sis>
+              <option value="" disabled selected>도 , 시 를 선택해주세요.</option>
+              <option *ngFor="let doo of Dos" value="{{doo.si}}">{{doo.si}}</option>
+            </select>
+          </div>
+
+          <div class="input-field col s6">
+            <select onmousedown="if(this.options.length>4){this.size=4;}"
+                    onchange="this.blur()"
+                    onblur="this.size=0;"
+                    class="browser-default"
+                    id="citys" #gus>
+              <option value="" disabled selected>시, 구 를 선택해주세요.</option>
+              <option *ngFor="let gu of Gus" value="{{gu.gu}}">{{gu.gu}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div id="sub_title_text">
+            <label>상세 주소</label>
+          </div>
+          <br>
+          <div class="input-field col s12" style="margin-bottom: 0;">
+            <input placeholder="대성군 장군리 25 번지 1호"
+                   id="shop_hp"
+                   type="text"
+                   class="validate" #place>
+            <label for="shop_hp" class="black-text">연락처 (선택사항)</label>
+          </div>
+          <div id="sub_title_text">
+            <p>상세주소를 입력해 주세요.</p>
+          </div>
+        </div>
+
+        <a class="waves-effect waves-light btn col s12"
+           style="text-align: center;
+           height: 45px; padding-top: 6px; font-size: 1.2em;" (click)="create()">제휴샵 생성</a>
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+</body>

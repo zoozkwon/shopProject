@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<body>
+  <div id="center">
+    <div id="product">
+    <h3>상품 페이지</h3>
+      <div class="row">
+        <div class="col s6 m6" *ngFor="let item of items">
+          <div class="card" [routerLink]="['/main/ProductDetail', item.no ]" >
+            <div class="card-image">
+            </div>
+            <div class="card-content">
+              <div class="row">
+                <div class="col s4">
+                  <h6>이름</h6>{{item.manager_name}}
+                </div>
+                <div class="col s4">
+                  <h6>제휴샵 명</h6>{{item.shop_name}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="pagination">
+        <li *ngFor="let prev of prev_pages" class="{{prev.prev_pages}}"><a (click)="prevPage()"><i class="material-icons">chevron_left</i></a></li>
+        <li *ngFor="let page of pages" class="{{page.li_class}}" ><a (click)="movePage($event, page)">{{page.page}}</a></li>
+        <li *ngFor="let next of next_pages" class="{{next.next_pages}}"><a (click)="nextPage()"><i class="material-icons">chevron_right</i></a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+<app-footer></app-footer>

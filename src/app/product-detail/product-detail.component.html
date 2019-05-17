@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+<body style="margin-bottom: 50px;">
+  <div id="center">
+    <div id="product">
+      <div class="row" style="text-align: center">
+        <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+      </div>
+      <div *ngFor="let shop of shops">
+        <div class="row">
+          <h5>{{shop.shop_name}}</h5>
+        </div>
+        <div class="row">
+          <div class="col s1">평점</div>
+          <div class="col s1">{{shop.GPA}}</div>
+          <div class="col s1">댓글</div>
+          <div class="col s1">{{shop.comments}}</div>
+          <div class="col s2" (click)="Write()">댓글쓰기</div>
+        </div>
+      </div>
+      <ul class="collection">
+        <li class="collection-item"></li>
+      </ul>
+      <div class="col s12 m7" *ngFor="let item of items">
+        <div class="card horizontal" style="margin-top:5px; margin-bottom:5px; padding:10px 10px 10px 10px;">
+          <div class="card-image">
+            <img src="http://ec2-15-164-60-92.ap-northeast-2.compute.amazonaws.com/uploadImage/2147483647.jpeg"
+                 style="width:350px; height:200px; border-radius: 0.8rem;">
+          </div>
+          <div class="card-stacked" >
+            <div class="card-content">
+              <div class="row">
+                <div class="col s9" style="font-size:1.3em">{{item.product_name}}</div>
+                <div *ngIf="item.If == 'Y'">
+                  <span class="badge blue white-text" style="text-align: right;">{{item.status}}</span>
+                </div>
+                <div *ngIf="item.If != 'Y'">
+                  <span class="badge red white-text" style="text-align: right;">{{item.status}}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s6" style="margin-bottom:10px; font-size:1.3em">{{item.explanation}}</div>
+              </div>
+              <div class="row" style="margin-bottom:0;">
+                <div class="col s6" style="font-size:1.3em">{{item.target}}</div>
+                <div style="text-align: right; font-size:1.3em" >가격</div>
+                <h6 style="text-align: right; font-size:1.3em">{{item.price}} 원</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:20px;">
+        <a class="waves-effect waves-light btn col s12 "  style="text-align: center;" (click)="Order()" >주문하기</a>
+      </div>
+    </div>
+  </div>
+<app-footer></app-footer>
+</body>
