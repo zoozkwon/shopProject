@@ -4,11 +4,34 @@
   <meta charset="utf-8">
   <title>ShopMain</title>
   <base href="/">
-
+  <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+  <script src="./assets/js/init.js"></script>
+  <script src="./assets/js/star.js"></script>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
   <app-root></app-root>
 </body>
+<script>
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            400:{
+                items:3
+            },
+            8000:{
+                items:5
+            }
+        }
+    });
+</script>
 </html>

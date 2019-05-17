@@ -11,3 +11,6 @@
     padding-bottom : 25px;
     word-break : break-all;
 }
+.pagination_active{
+    color : #f44336;
+}
